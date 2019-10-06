@@ -1,19 +1,27 @@
 import React, {Component} from 'react';
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import { Layout, Menu, Icon } from 'antd';
+import CargaContainer from './containers/CargaContainer';
+import SeguimientoContainer from './containers/SeguimientoContainer';
+import MisDatosContainer from './containers/MisDatosContainer';
+import ContactContainer from './containers/ContactContainer';
+import logo from './meeseeks-logo.png';
 
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
-
-
 
 class App extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
-      collapsed: false
+      collapsed: false,
+      actualTab: "home",
+      carga : <CargaContainer/>,
+      seguimiento: <SeguimientoContainer/>,
+      data: <MisDatosContainer/>,
+      contact: <ContactContainer/>
     }
     this.onCollapse = this.onCollapse.bind(this);
+    this.onSelect = this.onSelect.bind(this);
   }
 
   onCollapse(collapsed){
@@ -21,34 +29,43 @@ class App extends Component {
     this.setState({ collapsed });
   };
 
+  onSelect(data){
+    this.setState({
+      actualTab: data.key
+    })
+  }
   render(){
+    const toShow = this.state[this.state.actualTab];
     return (
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-          <div className="logo" />
-          <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-            <Menu.Item key="1">
+          <Menu theme="dark" mode="inline" onSelect={this.onSelect}>
+            <Menu.Item key="home" disabled={true}>
+            </Menu.Item>
+            <Menu.Item key="carga">
               <Icon type="pie-chart" />
               <span>Cargar Reclamos</span>
             </Menu.Item>
-            <Menu.Item key="2">
+            <Menu.Item key="seguimiento">
               <Icon type="desktop" />
               <span>Seguimiento</span>
             </Menu.Item>
-            <Menu.Item key="3">
+            <Menu.Item key="data">
               <Icon type="file" />
               <span>Mis datos</span>
             </Menu.Item>
-            <Menu.Item key="4">
+            <Menu.Item key="contact">
               <Icon type="file" />
               <span>Contactenos</span>
             </Menu.Item>
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#fff', padding: 0 }} />
+          <Header style={{ background: '#f0f2f5', padding: 0, paddingLeft:30 }}>
+           <img src={logo} alt="noimage" className="logo" /> <b className="logo-text">  Meeseeks S.A. Centro de Ayuda</b>          
+          </Header>
           <Content style={{ margin: '0 16px' }}>
-     
+            {toShow}
           </Content>
           <Footer style={{ textAlign: 'center' }}>
             <b>Meeseeks S.A. Help Desk ©2019 Created by Grupo 1 : Team Meeseeks</b>
