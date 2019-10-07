@@ -43,26 +43,30 @@ class App extends Component {
             <Menu.Item key="home" disabled={true}>
             </Menu.Item>
             <Menu.Item key="carga">
-              <Icon type="pie-chart" />
+              <Icon type="plus-circle"/>
               <span>Cargar Reclamos</span>
             </Menu.Item>
             <Menu.Item key="seguimiento">
               <Icon type="desktop" />
               <span>Seguimiento</span>
             </Menu.Item>
+            <Menu.Item key="stat">
+              <Icon type="dashboard" />
+              <span>Estado del Servicio</span>
+            </Menu.Item>
             <Menu.Item key="data">
-              <Icon type="file" />
+              <Icon type="user" />
               <span>Mis datos</span>
             </Menu.Item>
             <Menu.Item key="contact">
-              <Icon type="file" />
+              <Icon type="customer-service" />
               <span>Contactenos</span>
             </Menu.Item>
           </Menu>
         </Sider>
         <Layout>
           <Header style={{ background: '#f0f2f5', padding: 0, paddingLeft:30 }}>
-           <img src={logo} alt="noimage" className="logo" /> <b className="logo-text">  Meeseeks S.A. Centro de Ayuda</b>          
+           <img src={logo} alt="noimage" className="logo" /> <b className="logo-text" style={{marginLeft:20}}>  Meeseeks S.A. Centro de Ayuda</b>          
           </Header>
           <Content style={{ margin: '0 16px' }}>
             {toShow}

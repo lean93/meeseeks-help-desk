@@ -21,3 +21,8 @@ code {
   font-size: 18px;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
 }
+
+.contact-info p{
+  padding: 3;
+  margin: 0;
+}
