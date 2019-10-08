@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
-import { Form, Input, Button, Row, Col } from 'antd';
-const { TextArea } = Input;
+import { Form, Input, Button, Row, Col, message } from 'antd';
 
 class MisDatosContainer extends Component {
 
@@ -8,6 +7,7 @@ class MisDatosContainer extends Component {
     super(props)
     this.state = {
         inEdition: false,
+        loading:false,
         nombre: "Fernando Matias",
         apellido:"Gutierrez",
         compania:"Solicitante SRL",
@@ -17,12 +17,29 @@ class MisDatosContainer extends Component {
     }
     this.changeEdit = this.changeEdit.bind(this);
     this.onChangeInput = this.onChangeInput.bind(this);
+    this.modifyEdit = this.modifyEdit.bind(this);
+  }
+
+  modifyEdit(value){
+    this.setState({
+      inEdition:value,
+      loading:false
+    })
   }
 
   changeEdit(){
-    this.setState({
-      inEdition: !this.state.inEdition
-    })
+    if(this.state.inEdition){
+      this.setState({loading:true})
+      const modifyEdit = () => this.modifyEdit(!this.state.inEdition);
+      message.loading("Guardando los cambios", 3);
+      setTimeout(function() { 
+          modifyEdit(); 
+          message.success("Cambios guardados correctamente", 3);
+      }, 4000);
+    }else{
+      this.modifyEdit(!this.state.inEdition);
+    }
+   
   }
 
   onChangeInput(attr, e){
@@ -33,9 +50,9 @@ class MisDatosContainer extends Component {
 
   render(){
     return (
-      <Row>
-          <Col lg={8} xl={8} sm={8}>
-              <Form layout="vertical" style={{ padding: 60 }}>
+      <Row gutter={48}>
+          <Col lg={8} xl={8} sm={12}>
+              <Form layout="vertical" style={{ paddingLeft: 50, paddingTop:50 }}>
                   <Form.Item label="Nombre: " >
                       <Input placeholder="Ingrese nombre completo..." disabled={!this.state.inEdition} value={this.state.nombre} 
                               onChange={(e)=>this.onChangeInput('nombre',e)}/>
@@ -49,12 +66,14 @@ class MisDatosContainer extends Component {
                             onChange={(e)=>this.onChangeInput('email',e)}/>
                   </Form.Item>
                   <Form.Item >
-                      <Button type="primary" icon={this.state.inEdition?"save":"edit"} onClick={this.changeEdit}>{this.state.inEdition?"Guardar Cambios":"Editar"}</Button>
+                      <Button type="primary" icon={this.state.inEdition?"save":"edit"} onClick={this.changeEdit} loading={this.state.loading}>
+                          {this.state.inEdition?"Guardar Cambios":"Editar"}
+                      </Button>
                   </Form.Item>
               </Form>
           </Col>
-          <Col lg={8} xl={8} sm={8}>
-               <Form layout="vertical" style={{ padding: 60 }}>
+          <Col lg={8} xl={8} sm={12}>
+               <Form layout="vertical" style={{ paddingTop:50}}>
                     <Form.Item label="Apellido:" >
                         <Input placeholder="Ingrese nombre completo..." disabled={!this.state.inEdition} value={this.state.apellido}
                               onChange={(e)=>this.onChangeInput('apellido',e)}/>

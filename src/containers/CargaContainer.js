@@ -15,7 +15,7 @@ class CargaContainer extends Component {
         return (
             <Row>
                 <Col lg={14} xl={14} sm={14}>
-                    <Form layout="vertical" style={{ padding: 40 }}>
+                    <Form layout="vertical" style={{ padding: 60 }}>
                         <Form.Item label="Resumen" >
                             <Input placeholder="Ingrese resumen del problema..." />
                         </Form.Item>
