@@ -14,7 +14,7 @@ class ContactContainer extends Component {
         return (
             <Row>
                 <Col lg={14} xl={14} sm={14}>
-                    <Form layout="vertical" style={{ padding: 40 }}>
+                    <Form layout="vertical" style={{ padding: 50 }}>
                         <Form.Item label="Nombre" >
                             <Input placeholder="Ingrese nombre completo..." />
                         </Form.Item>
@@ -33,7 +33,7 @@ class ContactContainer extends Component {
                     </Form>
                 </Col>
                 <Col lg={10} xl={10} sm={10}>
-                    <div style={{padding:40, paddingTop:50}} className="contact-info">
+                    <div style={{padding:50, paddingTop:60}} className="contact-info">
                         <p><b> Messeeks S.A.</b></p>
                         <p>Mozart 2300, C1407 CABA</p>
                         <p>Argentina</p>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Table, Tooltip, Button } from 'antd';
-import { stat } from 'fs';
 
 const Column = Table.Column;
 
@@ -20,7 +19,7 @@ class SeguimientoContainer extends Component {
     getColor(status){
         if(status ==="FINISHED"){
             return "#43af43"
-        }else if(status =="IN PROGRESS"){
+        }else if(status ==="IN PROGRESS"){
             return "#5656da"
         }else{
             return "#00bcd4"
@@ -44,8 +43,8 @@ class SeguimientoContainer extends Component {
                     <Column align='center' key='actions' title="Acciones" render={data => {
                         return (
                             <React.Fragment>
-                            <Button icon="customer-service" style={{marginRight:10}} type='primary' title="Contactar on Soporte"/>  
-                            <Button icon="unordered-list" title="Detalles"/>
+                                <Button icon="customer-service" style={{marginRight:10}} type='primary' title="Contactar con Soporte"/>  
+                                <Button icon="unordered-list" title="Detalles"/>
                             </React.Fragment>
                         )
                     }} 

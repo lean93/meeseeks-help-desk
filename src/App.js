@@ -68,7 +68,7 @@ class App extends Component {
           <Header style={{ background: '#f0f2f5', padding: 0, paddingLeft:30 }}>
            <img src={logo} alt="noimage" className="logo" /> <b className="logo-text" style={{marginLeft:20}}>  Meeseeks S.A. Centro de Ayuda</b>          
           </Header>
-          <Content style={{ margin: '0 16px' }}>
+          <Content style={{ margin: '0 16px', overflowY: 'scroll', height: '80vh'}}>
             {toShow}
           </Content>
           <Footer style={{ textAlign: 'center' }}>
