@@ -42,7 +42,7 @@ code {
 .ant-carousel .slick-slide {
   text-align: center;
   height: 100vh;
-  line-height: 60vh;
+  line-height: 10vh;
   background: #f0f2f5;
   overflow: hidden;
 }

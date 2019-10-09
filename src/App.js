@@ -72,7 +72,8 @@ class App extends Component {
           <Header style={{ background: '#f0f2f5', padding: 10, paddingLeft:30, paddingRight:50}}>
           <Row>
             <Col lg={14} xl={14} sm={14}>
-           <img src={logo} alt="noimage" className="logo" /> <b className="logo-text" style={{marginLeft:20}}>  Meeseeks S.A. </b>
+           <img src={logo} alt="noimage" className="logo" style={{cursor:'pointer'}} onClick={()=>this.onSelect({key:'home'})}/> 
+              <b className="logo-text" style={{marginLeft:20, cursor:'pointer'}} onClick={()=>this.onSelect({key:'home'})}>  Meeseeks S.A. </b>
            </Col>
            <Col lg={10} xl={10} sm={10} xs={0}>
            <ButtonGroup className="logout-group" style={{float:'right'}}>
