@@ -1,12 +1,16 @@
 import React, {Component} from 'react';
-import { Layout, Menu, Icon } from 'antd';
+import { Layout, Menu, Icon, Button, Row, Col } from 'antd';
 import CargaContainer from './containers/CargaContainer';
 import SeguimientoContainer from './containers/SeguimientoContainer';
 import MisDatosContainer from './containers/MisDatosContainer';
 import ContactContainer from './containers/ContactContainer';
 import logo from './meeseeks-logo.png';
+import HomeContainer from './containers/HomeContainer';
 
 const { Header, Content, Footer, Sider } = Layout;
+
+
+const ButtonGroup = Button.Group;
 
 class App extends Component {
 
@@ -15,6 +19,7 @@ class App extends Component {
     this.state = {
       collapsed: false,
       actualTab: "home",
+      home: <HomeContainer/>,
       carga : <CargaContainer/>,
       seguimiento: <SeguimientoContainer/>,
       data: <MisDatosContainer/>,
@@ -49,10 +54,10 @@ class App extends Component {
               <Icon type="desktop" />
               <span>Seguimiento</span>
             </Menu.Item>
-            <Menu.Item key="stat">
+            {/*<Menu.Item key="stat">
               <Icon type="dashboard" />
               <span>Estado del Servicio</span>
-            </Menu.Item>
+            </Menu.Item>*/}
             <Menu.Item key="data">
               <Icon type="user" />
               <span>Mis datos</span>
@@ -64,8 +69,24 @@ class App extends Component {
           </Menu>
         </Sider>
         <Layout>
-          <Header style={{ background: '#f0f2f5', padding: 0, paddingLeft:30 }}>
-           <img src={logo} alt="noimage" className="logo" /> <b className="logo-text" style={{marginLeft:20}}>  Meeseeks S.A. Centro de Ayuda</b>          
+          <Header style={{ background: '#f0f2f5', padding: 10, paddingLeft:30, paddingRight:50}}>
+          <Row>
+            <Col lg={14} xl={14} sm={14}>
+           <img src={logo} alt="noimage" className="logo" /> <b className="logo-text" style={{marginLeft:20}}>  Meeseeks S.A. </b>
+           </Col>
+           <Col lg={10} xl={10} sm={10} xs={0}>
+           <ButtonGroup className="logout-group" style={{float:'right'}}>
+                    <Button size="large" className="logout-user">
+                    <Icon type="user" style={{ fontSize: 20, color: '#08c'}}/><span>"UTN user"</span>
+                    </Button>
+                    <Button size="large" type="danger">
+                        <a>
+                            logout <Icon type="poweroff"/>
+                        </a>
+                    </Button>
+                </ButtonGroup> 
+                </Col>
+                </Row>      
           </Header>
           <Content style={{ margin: '0 16px', overflowY: 'scroll', height: '80vh'}}>
             {toShow}

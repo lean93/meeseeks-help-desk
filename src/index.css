@@ -16,6 +16,10 @@ code {
   height: 70px !important;
 }
 
+.logo-home-page {
+  height: 50vh !important;
+}
+
 .logo-text{
   color: black;
   font-size: 18px;
@@ -25,4 +29,16 @@ code {
 .contact-info p{
   padding: 3;
   margin: 0;
+}
+
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 100vh;
+  line-height: 60vh;
+  background: #f0f2f5;
+  overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+  color:'black';
 }
