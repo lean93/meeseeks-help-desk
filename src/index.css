@@ -20,6 +20,14 @@ code {
   height: 50vh !important;
 }
 
+.logo-home-seg {
+  height: 30vh !important;
+}
+
+.logo-home-profile {
+  height: 40vh !important;
+}
+
 .logo-text{
   color: black;
   font-size: 18px;

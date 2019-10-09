@@ -17,7 +17,7 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      collapsed: false,
+      collapsed: true,
       actualTab: "home",
       home: <HomeContainer/>,
       carga : <CargaContainer/>,
