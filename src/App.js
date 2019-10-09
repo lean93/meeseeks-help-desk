@@ -89,7 +89,7 @@ class App extends Component {
                 </Row>      
           </Header>
           <Content style={{ margin: '0 16px', overflowY: 'scroll', height: '80vh'}}>
-            {toShow}
+            {React.cloneElement(toShow, { onSelect: this.onSelect })}
           </Content>
           <Footer style={{ textAlign: 'center' }}>
             <b>Meeseeks S.A. Help Desk ©2019 Created by Grupo 1 : Team Meeseeks</b>
