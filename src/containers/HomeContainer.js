@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Carousel, Row, Col, Button } from 'antd';
-import home from '../../src/phone-clipart-laptop-18.jpg';
+import home from '../../src/home-page.png';
 import reclamos from '../../src/home-reclamos.png';
 import seguimiento from '../../src/seguimiento.png';
 import profile from '../../src/profile-home-image.png';
@@ -18,10 +18,10 @@ class HomeContainer extends Component {
         return (
             <Carousel effect="fade" autoplay style={{ marginTop: 30 }}>
                 <Row gutter={8}>
-                    <Col span={10} style={{paddingTop:'5vh', paddingRight:'5vh'}} >
+                    <Col span={10} style={{paddingTop:'5vh', paddingLeft:'7vh'}} >
                         <img src={home} alt="noimage" className="logo-home-page" />
                     </Col>
-                    <Col span={14} style={{ lineHeight: 2, textAlign:'justify',paddingLeft:'10vh', paddingTop:'7vh', paddingRight:'5vh'}} >
+                    <Col span={14} style={{ lineHeight: 2, textAlign:'justify',paddingLeft:'15vh', paddingTop:'7vh', paddingRight:'5vh'}} >
                         <h1 className="header-home"><b><i>Meeseeks en todos lados!</i></b></h1>
                         <p >Mediante nuestro portal de <b>Meeseeks S.A.</b> le permitira realizar sus consultas, revisar sus servicios, cargar sus reclamos
                             desde cualquier dispositivo</p>
