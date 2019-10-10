@@ -81,7 +81,7 @@ class App extends Component {
                     <Icon type="user" style={{ fontSize: 20, color: '#08c'}}/><span>"UTN user"</span>
                     </Button>
                     <Button size="large" type="danger">
-                        <a>
+                        <a href="/">
                             logout <Icon type="poweroff"/>
                         </a>
                     </Button>

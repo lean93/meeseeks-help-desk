@@ -42,11 +42,21 @@ code {
 .ant-carousel .slick-slide {
   text-align: center;
   height: 100vh;
-  line-height: 10vh;
+  line-height: 5vh;
   background: #f0f2f5;
   overflow: hidden;
 }
 
 .ant-carousel .slick-slide h3 {
   color:'black';
+}
+
+.header-home{
+  font-size: x-large;
+  font-family: sans-serif;
+}
+
+.content-home{
+  font-size: medium !important;
+  font-family: sans-serif;
 }
