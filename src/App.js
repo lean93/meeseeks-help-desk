@@ -40,11 +40,12 @@ class App extends Component {
   }
   render(){
     const toShow = this.state[this.state.actualTab];
+    const selectedKeys = this.setState.actualTab !== 'home' ? [this.state.actualTab] : [];
     return (
       <Layout style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-          <Menu theme="dark" mode="inline" onSelect={this.onSelect}>
-            <Menu.Item key="home" disabled={true}>
+          <Menu theme="dark" mode="inline" onSelect={this.onSelect} selectedKeys={selectedKeys}>
+            <Menu.Item key="" disabled={true}>
             </Menu.Item>
             <Menu.Item key="carga">
               <Icon type="plus-circle"/>
